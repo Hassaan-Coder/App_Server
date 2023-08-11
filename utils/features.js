@@ -31,11 +31,11 @@ export const cookieOptions = {
 
 export const sendEmail = async (subject, to, text) => {
   const transporter = createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
     auth: {
-      user: "greta88@ethereal.email",
-      pass: "M8tetDHWzpY83NRz3S",
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   });
 
